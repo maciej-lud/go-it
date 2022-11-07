@@ -1,0 +1,21 @@
+:root {
+  font-family: $font-first;
+  color: $color-text-dark;
+}
+.container {
+  min-width: 300px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.wrapper {
+  display: grid;
+  grid-auto-columns: auto;
+  grid-auto-rows: auto;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+}
+*:focus {
+  outline: 2px solid $color-text-light;
+}

@@ -1,0 +1,177 @@
+.team {
+  text-align: center;
+  padding: 50px 0 80px;
+  .team__header {
+    @include header;
+    .team__headerTitle {
+      @include headerTitle;
+    }
+    .team__headerSubtitle {
+      @include headerSubtitle;
+    }
+  }
+  .team__text {
+    width: 80%;
+    font-family: $font-second;
+    font-size: 15px;
+    color: $color-text-light;
+    line-height: 25px;
+    margin: 0 auto;
+    margin-top: 40px;
+  }
+  .team__cards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 90px;
+    .team__card {
+      width: 30%;
+      .team__cardBgc {
+        width: 100%;
+        height: 470px;
+        background-color: $color-fourth;
+      }
+      .team__cardBox {
+        position: relative;
+        width: 100%;
+        height: 470px;
+        overflow: hidden;
+        transition: 0.5s;
+        &:hover {
+          transform: translate(-10px, -10px);
+        }
+      }
+      .team__cardImg {
+        position: absolute;
+        height: 470px;
+      }
+      .team__cardImg--one {
+        left: -100px;
+      }
+      .team__cardImg--two {
+        left: -70px;
+        bottom: 40px;
+        transform: scale(120%);
+      }
+      .team__cardImg--three {
+        left: -150px;
+      }
+      .team__cardMenu {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          180deg,
+          rgba($color-first, 0.9) 0%,
+          rgba($color-second, 0.9) 90%
+        );
+        opacity: 0;
+        transition: 1s;
+        &:hover {
+          opacity: 1;
+          .team__cardBtns {
+            left: 50%;
+            transition: 1.5s;
+          }
+        }
+      }
+      .team__cardBtns {
+        position: absolute;
+        top: 50%;
+        left: -50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+      }
+      .team__cardBtn {
+        width: 55px;
+        height: 55px;
+        background-color: $color-second;
+        border: none;
+        border-right: 1px solid $color-first;
+        cursor: pointer;
+        &:last-child {
+          border-right: none;
+        }
+        &:hover {
+          background: $color-first;
+          .team__cardBtnImg {
+            filter: invert(1);
+          }
+        }
+      }
+      .team__cardBtnImg {
+        filter: invert(64%) sepia(34%) saturate(2392%) hue-rotate(313deg)
+          brightness(110%) contrast(91%);
+      }
+      .team__cardName {
+        font-size: 14px;
+        text-transform: uppercase;
+        margin-top: 30px;
+      }
+      .team__cardProfession {
+        font-family: $font-second;
+        font-size: 15px;
+        font-weight: 300;
+        color: $color-text-light;
+        font-style: italic;
+        text-transform: capitalize;
+        margin-top: 15px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1250px) {
+  .team__cards {
+    padding: 0 20px;
+  }
+}
+@media (max-width: 1000px) {
+  .team__cardImg--one {
+    left: -100px !important;
+  }
+  .team__cardImg--two {
+    left: -90px !important;
+  }
+  .team__cardImg--three {
+    left: -200px !important;
+  }
+}
+@media (max-width: 850px) {
+  .team__card {
+    width: 45% !important;
+  }
+  .team__card:last-child {
+    margin-top: 50px;
+  }
+  .team__cardImg--one {
+    left: -100px !important;
+  }
+  .team__cardImg--two {
+    left: -70px !important;
+  }
+  .team__cardImg--three {
+    left: -150px !important;
+  }
+}
+@media (max-width: 650px) {
+  .team__cards {
+    justify-content: center !important;
+  }
+  .team__card {
+    width: 70% !important;
+  }
+  .team__card:not(:first-child) {
+    margin-top: 50px;
+  }
+}
+@media (max-width: 850px) {
+  .team__cardImg--two {
+    left: -90px !important;
+  }
+  .team__cardImg--three {
+    left: -200px !important;
+  }
+}

@@ -1,0 +1,26 @@
+@mixin header() {
+  position: relative;
+  padding-bottom: 40px;
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 5px;
+    background-color: $color-first;
+  }
+}
+@mixin headerTitle($fontSize: 24px) {
+  font-family: $font-third;
+  font-size: $fontSize;
+  font-weight: normal;
+}
+@mixin headerSubtitle($fontSize: 30px, $marginTop: 20px) {
+  font-size: $fontSize;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-top: $marginTop;
+}

@@ -1,0 +1,115 @@
+.header {
+  grid-area: header;
+  height: 1000px;
+  color: $color-text-white;
+  text-align: center;
+  background-image: linear-gradient(
+      180deg,
+      rgba($color-first, 0.9) 0%,
+      rgba($color-second, 0.9) 90%
+    ),
+    url(../../assets/images/banner.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  .header__bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    .header__logo {
+      font-size: 30px;
+    }
+    .header__navList {
+      display: flex;
+      list-style: none;
+    }
+    .header__navItem {
+      font-size: 14px;
+      text-transform: uppercase;
+      margin-left: 60px;
+    }
+    .header__navLink {
+      display: flex;
+      align-items: center;
+      color: $color-text-white;
+      text-decoration: none;
+      border-top: 3px solid transparent;
+      border-bottom: 3px solid transparent;
+      padding: 10px 0;
+      cursor: pointer;
+      &:hover {
+        color: $color-second;
+        border-bottom: 3px solid $color-second;
+      }
+    }
+    .header__navLink--icon {
+      filter: invert(1);
+      &:hover {
+        filter: invert(86%) sepia(56%) saturate(375%) hue-rotate(335deg)
+          brightness(99%) contrast(100%);
+      }
+    }
+  }
+  .header_title {
+    @include headerTitle(72px);
+    text-transform: capitalize;
+    margin-top: 170px;
+  }
+  .header_subtitle {
+    @include headerSubtitle(150px, 60px);
+    line-height: 140px;
+  }
+  .header_btn {
+    font-size: 14px;
+    color: inherit;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: transparent;
+    border: 3px solid $color-text-white;
+    margin-top: 120px;
+    padding: 10px 30px;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 1250px) {
+  .header__bar {
+    padding: 20px 20px 0;
+  }
+}
+@media (max-width: 900px) {
+  .header__navItem {
+    margin-left: 30px !important;
+  }
+  .header .header_title {
+    @include headerTitle(54px);
+    margin-top: 170px;
+  }
+  .header .header_subtitle {
+    @include headerSubtitle(113px, 60px);
+    line-height: 105px;
+  }
+}
+@media (max-width: 680px) {
+  .header__navItem {
+    margin-left: 10px !important;
+  }
+  .header .header_title {
+    @include headerTitle(36px);
+    margin-top: 170px;
+  }
+  .header .header_subtitle {
+    @include headerSubtitle(75px, 60px);
+    line-height: 70px;
+  }
+}
+@media (max-width: 530px) {
+  .header__bar {
+    flex-direction: column;
+  }
+  .header .header_subtitle {
+    @include headerSubtitle(60px, 60px);
+    line-height: 55px;
+  }
+}
